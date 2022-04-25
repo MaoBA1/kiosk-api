@@ -4,11 +4,13 @@ const bodyParser = require('body-parser');
 const { urlencoded } = require('body-parser');
 const app = express();
 const port = 3000;
+const cors = require('cors');
 
 const accounts = require('./controllers/accounts');
 const storeRoute = require('./controllers/store');
 const productsRoute = require('./controllers/products');
 
+app.use(cors());
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 app.use('/api/accounts', accounts);
