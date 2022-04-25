@@ -65,6 +65,10 @@ router.put('/updateStore', isAuth, async(req, res) => {
     })
 })
 
+router.get('/getAllStores', async(req, res) => {
+    const stores = await Store.find();
+    return res.status(200).json({stores});
+});
 
 
 
